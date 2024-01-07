@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="utf-8" />
     <title>Jajoglowy - Blog</title>
@@ -7,8 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="stylesheet" href="/src/styles.css" />
+    <script>
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        if (document && document.documentElement) {
+          document.documentElement.classList.add('dark')
+          localStorage.setItem('theme', 'dark')
+       }
+      } else {
+        if (document && document.documentElement) {
+          document.documentElement.classList.remove('dark')
+          localStorage.setItem('theme', 'light')
+        }
+      }
+    </script>
   </head>
-  <body>
+  <body class="bg-white dark:bg-black">
     <blog-root></blog-root>
     <script type="module" src="/src/main.ts"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
