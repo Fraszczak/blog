@@ -7,7 +7,7 @@ import PostAttributes from 'src/app/post-attributes';
   standalone: true,
   imports: [RouterLink],
   host: {
-    class: 'flex flex-1'
+    class: 'flex flex-1',
   },
   templateUrl: './preview.component.html',
 })

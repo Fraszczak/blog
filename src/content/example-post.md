@@ -1,24 +1,11 @@
 ---
 title: What is TypeScript?
-slug: 2022-12-27-my-first-post
+author: pf
+publishDate: 2024-01-07
+slug: 2022-12-27-by-pFraszczak
 description: You can read about what TypeScrip is.
 coverImage: https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80
 ---
-
-### Table of contents:
-
-- [Introduction](#introduction)
-- [Advantages of TypeScript](#advantages-of-typescript)
-  - [Typing system](#typing-system)
-  - [JavaScript Compatibility](#javascript-compatibility)
-  - [Improved Tooling](#improved-tooling)
-  - [Compatibility with Popular Libraries and Frameworks](#compatibility-with-popular-libraries-and-frameworks)
-  - [Easy Refactoring](#easy-refactoring)
-  - [Better Documentation](#better-documentation)
-- [Disadvantages of TypeScript](#disadvantages-of-typescript)
-  - [Additional Learning Time](#additional-learning-time)
-  - [Increased Code Complexity](#increased-code-complexity)
-- [Summary](#summary)
 
 ## Introduction
 TypeScript is a technology that has gained a lot of popularity in the programming world since its inception. It is an extension of JavaScript, adding many valuable functionalities to it, such as classes, interfaces, enumerations, type annotations and much more. These features make your code more readable and easier to understand. In addition, TypeScript allows developers to write more complex applications that are more error-tolerant.
@@ -34,11 +21,38 @@ It's framework with strong typing system, some people say. Structural, or static
 You can read more about that here, in [type-safety](/en/type-safety)
 
 ```javascript
-// JavaScript
-const myVariable = someObject; // we are vulnerable to runtime type errors
+@Component({
+  // in our app
+  selector: 'app',
+  // ourDirective is applied to the host component
+  template: `<host ourDirective ></host>`,
+})
+export class AppComponent {}
 
-// TypeScript
-const myVariable: MyType = someObject; // thanks to typing, we will catch type errors during compilation
+@Component({
+  selector: 'host',
+  // the host simply renders the currentName
+  template: `{{ currentName }}`,
+})
+export class HostComponent {
+  // by default the currentName is setByTheHost
+  currentName = 'setByTheHost';
+}
+
+@Directive({
+  selector: '[ourDirective]',
+})
+export class OurDirective implements OnInit {
+  // ourDirective uses DI to get access to the HostComponent
+  public hostComponent = inject(HostComponent);
+
+  public ngOnInit(): void {
+    // after 3 seconds OurDirective sets the hostComponent's currentName as changedByDirective
+    setTimeout(() => {
+      this.hostComponent.currentName = 'changedByDirective';
+    }, 3000);
+  }
+}
 ```
 
 #### JavaScript Compatibility

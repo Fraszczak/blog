@@ -3,26 +3,19 @@ import { injectContent, MarkdownComponent } from '@analogjs/content';
 import { AsyncPipe } from '@angular/common';
 
 import PostAttributes from '../../post-attributes';
+import { ReviewComponent } from '../../../components';
 
 @Component({
   selector: 'app-blog-post',
   standalone: true,
-  imports: [AsyncPipe, MarkdownComponent],
+  imports: [AsyncPipe, ReviewComponent],
   template: `
     @if (post$ | async; as post) {
-    <article>
-      <img class="post__image" [src]="post.attributes.coverImage" />
-      <analog-markdown [content]="post.content" />
-    </article>
+      <article>
+        <blog-review [post]="post" />
+      </article>
     }
   `,
-  styles: [
-    `
-      .post__image {
-        max-height: 40vh;
-      }
-    `,
-  ],
 })
 export default class HomeComponent {
   readonly post$ = injectContent<PostAttributes>('slug');
