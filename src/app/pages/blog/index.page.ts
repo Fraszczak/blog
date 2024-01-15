@@ -8,7 +8,11 @@ import { PreviewComponent } from '../../../components';
   standalone: true,
   imports: [PreviewComponent],
   template: `
-    <h1 class="p-4 text-center text-black dark:text-white">Blog Archive</h1>
+    <h1
+      class="p-4 text-center text-black dark:text-white text-xl font-bold tracking-[.25em]"
+    >
+      Blog Archive
+    </h1>
     @for (post of posts; track post.attributes.slug) {
       <blog-preview [post]="post.attributes" />
     }
