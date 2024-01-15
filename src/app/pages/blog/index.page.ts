@@ -13,9 +13,11 @@ import { PreviewComponent } from '../../../components';
     >
       Blog Archive
     </h1>
-    @for (post of posts; track post.attributes.slug) {
-      <blog-preview [post]="post.attributes" />
-    }
+    <section class="grid grid-cols-2 gap-4 auto-rows-max">
+      @for (post of posts; track post.attributes.slug) {
+        <blog-preview [post]="post.attributes" />
+      }
+    </section>
   `,
 })
 export default class HomeComponent {
