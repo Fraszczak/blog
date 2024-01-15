@@ -11,7 +11,7 @@ export type Config = {
 const AUTHORS: Authors = {
   pf: {
     name: 'Piotr Fraszczak',
-    imgSrc: '/authors/avatar.jpg',
+    imgSrc: '/authors/pfraszczak.jpg',
   },
 };
 

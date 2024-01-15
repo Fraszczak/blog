@@ -8,10 +8,16 @@ import { PreviewComponent } from '../../../components';
   standalone: true,
   imports: [PreviewComponent],
   template: `
-    <h1 class="p-4 text-center text-black dark:text-white">Blog Archive</h1>
-    @for (post of posts; track post.attributes.slug) {
-      <blog-preview [post]="post.attributes" />
-    }
+    <h1
+      class="p-4 text-center text-black dark:text-white text-xl font-bold tracking-[.25em]"
+    >
+      Blog Archive
+    </h1>
+    <section class="grid grid-cols-2 gap-4 auto-rows-max">
+      @for (post of posts; track post.attributes.slug) {
+        <blog-preview [post]="post.attributes" />
+      }
+    </section>
   `,
 })
 export default class HomeComponent {
