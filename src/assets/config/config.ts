@@ -1,7 +1,7 @@
 export type Author = { name: string; imgSrc: string };
 
 export type Authors = {
-  [K in 'pf']: Author;
+  [K in 'pf' | 'rs']: Author;
 };
 
 export type Config = {
@@ -11,7 +11,11 @@ export type Config = {
 const AUTHORS: Authors = {
   pf: {
     name: 'Piotr Fraszczak',
-    imgSrc: '/authors/pfraszczak.jpg',
+    imgSrc: '/images/authors/pfraszczak.jpg',
+  },
+  rs: {
+    name: 'Rafał Szczuka',
+    imgSrc: '/images/authors/rszczuka.jpg',
   },
 };
 
