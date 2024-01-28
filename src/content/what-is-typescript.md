@@ -1,10 +1,10 @@
 ---
 title: What is TypeScript?
 author: pf
-publishDate: 2024-01-07
-slug: 2022-12-27-by-pFraszczak
-description: TypeScript is a technology that has gained a lot of popularity in the programming world since its inception. It is an extension of JavaScript, adding many valuable functionalities to it, such as classes, interfaces, enumerations, type annotations and much more.
-coverImage: https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80
+publishDate: 2023-03-19
+slug: 2023-03-19-by-pFraszczak
+description: You can read about what TypeScrip is. TypeScript is a technology developed and maintained by Microsoft that extends the capabilities of JavaScript.
+coverImage: /images/posts/type-script/ts-logo.jpg
 ---
 
 ## Introduction
@@ -22,38 +22,11 @@ It's framework with strong typing system, some people say. Structural, or static
 You can read more about that here, in [type-safety](/en/type-safety)
 
 ```javascript
-@Component({
-  // in our app
-  selector: 'app',
-  // ourDirective is applied to the host component
-  template: `<host ourDirective ></host>`,
-})
-export class AppComponent {}
+// JavaScript
+const myVariable = someObject; // we are vulnerable to runtime type errors
 
-@Component({
-  selector: 'host',
-  // the host simply renders the currentName
-  template: `{{ currentName }}`,
-})
-export class HostComponent {
-  // by default the currentName is setByTheHost
-  currentName = 'setByTheHost';
-}
-
-@Directive({
-  selector: '[ourDirective]',
-})
-export class OurDirective implements OnInit {
-  // ourDirective uses DI to get access to the HostComponent
-  public hostComponent = inject(HostComponent);
-
-  public ngOnInit(): void {
-    // after 3 seconds OurDirective sets the hostComponent's currentName as changedByDirective
-    setTimeout(() => {
-      this.hostComponent.currentName = 'changedByDirective';
-    }, 3000);
-  }
-}
+// TypeScript
+const myVariable: MyType = someObject; // thanks to typing, we will catch type errors during compilation
 ```
 
 #### JavaScript Compatibility
