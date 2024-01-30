@@ -1,4 +1,4 @@
-import { Authors } from '../assets/config/config';
+import { Authors } from './config';
 
 export default interface PostAttributes {
   title: string;
@@ -7,4 +7,5 @@ export default interface PostAttributes {
   slug: string;
   description: string;
   coverImage: string;
+  tags: string[];
 }

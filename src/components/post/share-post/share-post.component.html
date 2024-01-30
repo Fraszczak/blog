@@ -1,0 +1,29 @@
+<section
+  class="mx-auto px-6 sm:px-6 max-w-3xl my-14 flex justify-between flex-col sm:flex-row"
+>
+  <section>
+    <div class="flex justify-center mt-8 space-x-6">
+      @for (item of tags; track $index) {
+        <blog-tag [tag]="item" />
+      }
+    </div>
+  </section>
+  <section class="text-gray-600 dark:text-gray-400 font-black">
+    <div class="flex justify-center mt-8 space-x-6">
+      <span>Share:</span>
+      @for (item of getAuthorSocialMediaKeys; track $index) {
+        <blog-button
+          [author]="author"
+          [label]="item"
+          [icon]="item"
+        ></blog-button>
+      }
+    </div>
+  </section>
+</section>
+
+<section
+  class="mx-auto px-6 sm:px-6 max-w-3xl my-14 flex justify-between flex-col sm:flex-row"
+>
+  <blog-button [author]="author" label="Back" icon="Back" />
+</section>

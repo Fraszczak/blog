@@ -1,23 +1,30 @@
 import { ContentFile, MarkdownComponent } from '@analogjs/content';
 import { CommonModule } from '@angular/common';
-import { Component, Input, inject } from '@angular/core';
-import PostAttributes from 'src/app/post-attributes';
-import { ReviewService } from './review.service';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  inject,
+} from '@angular/core';
+import PostAttributes from 'src/models/post-attributes';
+import { SharePostComponent } from '../share-post/share-post.component';
+import { ConfigService } from '../../../services/config';
 
 @Component({
   selector: 'blog-review',
   standalone: true,
-  imports: [CommonModule, MarkdownComponent],
   templateUrl: './review.component.html',
+  imports: [CommonModule, MarkdownComponent, SharePostComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ReviewComponent {
   @Input({ required: true }) post!: ContentFile<
     PostAttributes | Record<string, never>
   >;
 
-  #service: ReviewService = inject(ReviewService);
+  #service = inject(ConfigService);
 
   get getAuthor() {
-    return this.#service.getPhotoSource(this.post.attributes.author);
+    return this.#service.getAuthor(this.post.attributes.author);
   }
 }
