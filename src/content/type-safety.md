@@ -5,6 +5,10 @@ publishDate: 2023-04-10
 slug: 2023-04-10-by-pFraszczak
 description: You can read about what type safety and type validity. In computer science, type safety and type validity is the degree to which a programming language discourages or prevents type errors.
 coverImage: /images/posts/type-script/type-safety.jpg
+tags:
+  - type-safety
+  - type-validity
+  - TypeScript-series
 ---
 
 ## Introduction
