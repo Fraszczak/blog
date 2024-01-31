@@ -5,6 +5,10 @@ publishDate: 2023-03-19
 slug: 2023-03-19-by-pFraszczak
 description: You can read about what TypeScrip is. TypeScript is a technology developed and maintained by Microsoft that extends the capabilities of JavaScript.
 coverImage: /images/posts/type-script/ts-logo.jpg
+tags:
+  - typescript
+  - ts
+  - TypeScript-series
 ---
 
 ## Introduction

@@ -11,9 +11,6 @@ dependencies:
   '@analogjs/router':
     specifier: ^0.2.0
     version: 0.2.29(@angular/common@17.0.8)(@angular/core@17.0.8)(@angular/platform-browser@17.0.8)(@angular/router@17.0.8)(front-matter@4.0.2)(marked-gfm-heading-id@3.1.2)(marked-highlight@2.1.0)(marked@5.1.2)(mermaid@10.6.1)(prismjs@1.29.0)(rxjs@7.5.7)
-  '@angular/animations':
-    specifier: ^17.0.0
-    version: 17.0.8(@angular/core@17.0.8)
   '@angular/common':
     specifier: ^17.0.0
     version: 17.0.8(@angular/core@17.0.8)(rxjs@7.5.7)

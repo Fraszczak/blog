@@ -5,6 +5,10 @@ publishDate: 2023-04-03
 slug: 2023-04-03-by-rSzczuka
 description: Everything you wanted to know about Dependency Injection in Angular. Most of us associate DI in Angular only with passing services in class constructors (components, directives, pipes or other services). In fact, this mechanism is much more, it gives us great opportunities.
 coverImage: /images/posts/dependency-injection/dep-i-header-en-1.png
+tags:
+  - angular
+  - dependency injection
+  - learn
 ---
 
 ### What's all this fuss about?

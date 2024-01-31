@@ -1,20 +1,13 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import { ToggleThemeComponent } from './toggle-theme/toggle-theme.component';
+import { ToggleMenuComponent } from './toggle-menu/toggle-menu.component';
+import { MenuElementComponent } from './menu-element/menu-element.component';
 
 @Component({
   selector: 'blog-header',
   standalone: true,
-  imports: [],
+  imports: [ToggleThemeComponent, ToggleMenuComponent, MenuElementComponent],
   templateUrl: './header.component.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class HeaderComponent {
-  onMenuToggle(e: any) {
-    const navlinks = document.querySelector('.navLinks');
-    e.name = e.name === 'menu' ? 'close' : 'menu';
-    navlinks?.classList.toggle('left-[0%]');
-  }
-
-  onThemeToggle(value: boolean) {
-    document.documentElement.classList.toggle('dark');
-  }
-}
+export class HeaderComponent {}

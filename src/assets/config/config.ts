@@ -1,21 +1,15 @@
-export type Author = { name: string; imgSrc: string };
-
-export type Authors = {
-  [K in 'pf' | 'rs']: Author;
-};
-
-export type Config = {
-  authors: Authors;
-};
+import { Authors, Config } from 'src/models/config';
 
 const AUTHORS: Authors = {
   pf: {
     name: 'Piotr Fraszczak',
     imgSrc: '/images/authors/pfraszczak.jpg',
+    socialMedia: {},
   },
   rs: {
     name: 'Rafał Szczuka',
     imgSrc: '/images/authors/rszczuka.jpg',
+    socialMedia: {},
   },
 };
 

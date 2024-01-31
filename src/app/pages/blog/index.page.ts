@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { injectContentFiles } from '@analogjs/content';
-import PostAttributes from '../../post-attributes';
-import { PreviewComponent } from '../../../components';
+import PostAttributes from '../../../models/post-attributes';
+import { PreviewComponent } from '../../../components/post';
 
 @Component({
   selector: 'app-blog',

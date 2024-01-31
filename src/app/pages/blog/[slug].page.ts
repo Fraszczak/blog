@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { injectContent, MarkdownComponent } from '@analogjs/content';
+import { injectContent } from '@analogjs/content';
 import { AsyncPipe } from '@angular/common';
 
-import PostAttributes from '../../post-attributes';
-import { ReviewComponent } from '../../../components';
+import PostAttributes from '../../../models/post-attributes';
+import { ReviewComponent } from '../../../components/post';
 
 @Component({
   selector: 'app-blog-post',

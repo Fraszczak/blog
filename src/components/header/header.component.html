@@ -18,34 +18,13 @@
         <ul
           class="flex md:flex-row flex-col md:items-center md:gap-[2vw] gap-8"
         >
-          <li
-            class="relative max-w-fit pr-3 md:pr-0 py-1 after:bg-gradient-to-r from-[#FFFF] dark:from-[#000000] to-rose-500 dark:to-rose-500 after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 tracking-[.25em]"
-          >
-            <a href="/">Home</a>
-          </li>
-          <li
-            class="relative max-w-fit pr-3 md:pr-0 py-1 after:bg-gradient-to-r from-[#FFFF] dark:from-[#000000] to-rose-500 dark:to-rose-500 after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 tracking-[.25em]"
-          >
-            <a href="/blog">Blog</a>
-          </li>
+          <blog-menu-element [name]="'Home'" [href]="'/'" />
+          <blog-menu-element [name]="'Blog'" [href]="'/blog'" />
         </ul>
       </div>
       <div class="flex items-center gap-2">
-        <button
-          title="Toggle Theme"
-          (click)="onThemeToggle(true)"
-          class="w-12 h-6 rounded-full p-1 bg-white dark:bg-gray-950 relative transition-colors duration-500 ease-in outline-none ring-2 ring-black dark:ring-white focus:border-transparent"
-        >
-          <div
-            id="toggle"
-            class="rounded-full w-4 h-4 bg-gray-950 dark:bg-white relative ml-0 dark:ml-6 pointer-events-none transition-all duration-300 ease-out"
-          ></div>
-        </button>
-        <ion-icon
-          name="menu"
-          (click)="onMenuToggle(this)"
-          class="text-[30px] cursor-pointer md:hidden text-black dark:text-white"
-        ></ion-icon>
+        <blog-toggle-theme />
+        <blog-toggle-menu />
       </div>
     </div>
   </nav>
