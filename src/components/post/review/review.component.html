@@ -35,11 +35,30 @@
       />
     </p>
 
-    <blog-share-post
-      [tags]="post.attributes.tags"
-      [author]="getAuthor"
-      class="pb-4"
+    <section
+      class="mx-auto px-6 sm:px-6 max-w-3xl my-14 flex justify-between flex-col sm:flex-row"
     >
-    </blog-share-post>
+      @if (post.attributes.tags) {
+        <section>
+          <div class="flex justify-center mt-8 space-x-6">
+            @for (item of post.attributes.tags; track $index) {
+              <blog-tag [tag]="item" />
+            }
+          </div>
+        </section>
+      }
+      @if (socialMediaAvailable) {
+        <blog-share-post
+          [tags]="post.attributes.tags"
+          [author]="getAuthor"
+          class="pb-4"
+        />
+      }
+    </section>
+    <section
+      class="mx-auto px-6 sm:px-6 max-w-3xl my-14 flex justify-between flex-col sm:flex-row"
+    >
+      <blog-button [author]="getAuthor" label="Back" icon="Back" />
+    </section>
   </section>
 </div>

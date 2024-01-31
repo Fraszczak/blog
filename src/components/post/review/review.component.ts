@@ -9,12 +9,20 @@ import {
 import PostAttributes from 'src/models/post-attributes';
 import { SharePostComponent } from '../share-post/share-post.component';
 import { ConfigService } from '../../../services/config';
+import { ButtonComponent } from '../../button';
+import { TagComponent } from '../../tag';
 
 @Component({
   selector: 'blog-review',
   standalone: true,
   templateUrl: './review.component.html',
-  imports: [CommonModule, MarkdownComponent, SharePostComponent],
+  imports: [
+    CommonModule,
+    MarkdownComponent,
+    SharePostComponent,
+    ButtonComponent,
+    TagComponent,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ReviewComponent {
@@ -26,5 +34,9 @@ export class ReviewComponent {
 
   get getAuthor() {
     return this.#service.getAuthor(this.post.attributes.author);
+  }
+
+  get socialMediaAvailable() {
+    return Object.keys(this.getAuthor.socialMedia).length > 0;
   }
 }

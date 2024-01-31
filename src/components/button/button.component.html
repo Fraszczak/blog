@@ -1,36 +1,38 @@
-<button>
-  <a
-    [href]="author.socialMedia[icon]"
-    class="text-gray-400 hover:text-gray-500"
-  >
-    @if (label) {
-      <span class="sr-only">{{ label }}</span>
-    }
-    @switch (icon) {
-      @case ("Facebook") {
-        <ng-container [ngTemplateOutlet]="Facebook"></ng-container>
+@if (author.socialMedia) {
+  <button>
+    <a
+      [href]="author.socialMedia[icon]"
+      class="text-gray-400 hover:text-gray-500"
+    >
+      @if (label) {
+        <span class="sr-only">{{ label }}</span>
       }
-      @case ("Dribbble") {
-        <ng-container [ngTemplateOutlet]="Dribbble"></ng-container>
+      @switch (icon) {
+        @case ("Facebook") {
+          <ng-container [ngTemplateOutlet]="Facebook"></ng-container>
+        }
+        @case ("Dribbble") {
+          <ng-container [ngTemplateOutlet]="Dribbble"></ng-container>
+        }
+        @case ("GitHub") {
+          <ng-container [ngTemplateOutlet]="GitHub"></ng-container>
+        }
+        @case ("Instagram") {
+          <ng-container [ngTemplateOutlet]="Instagram"></ng-container>
+        }
+        @case ("Twitter") {
+          <ng-container [ngTemplateOutlet]="Twitter"></ng-container>
+        }
+        @case ("Linkedin") {
+          <ng-container [ngTemplateOutlet]="Linkedin"></ng-container>
+        }
+        @case ("Back") {
+          <ng-container [ngTemplateOutlet]="Back"></ng-container>
+        }
       }
-      @case ("GitHub") {
-        <ng-container [ngTemplateOutlet]="GitHub"></ng-container>
-      }
-      @case ("Instagram") {
-        <ng-container [ngTemplateOutlet]="Instagram"></ng-container>
-      }
-      @case ("Twitter") {
-        <ng-container [ngTemplateOutlet]="Twitter"></ng-container>
-      }
-      @case ("Linkedin") {
-        <ng-container [ngTemplateOutlet]="Linkedin"></ng-container>
-      }
-      @case ("Back") {
-        <ng-container [ngTemplateOutlet]="Back"></ng-container>
-      }
-    }
-  </a>
-</button>
+    </a>
+  </button>
+}
 
 <ng-template #Facebook>
   <svg
