@@ -36,16 +36,20 @@
     </p>
 
     <section
-      class="mx-auto px-6 sm:px-6 max-w-3xl my-14 flex justify-between flex-col sm:flex-row"
+      class="mx-auto px-6 sm:px-6 flex justify-between flex-col sm:flex-row"
+    >
+      <blog-button [author]="getAuthor" label="Back" icon="Back" />
+    </section>
+
+    <section
+      class="mx-auto px-6 sm:px-6 my-14 flex justify-between flex-col sm:flex-row"
     >
       @if (post.attributes.tags) {
-        <section>
-          <div class="flex justify-center mt-8 space-x-6">
-            @for (item of post.attributes.tags; track $index) {
-              <blog-tag [tag]="item" />
-            }
-          </div>
-        </section>
+        <div class="flex justify-center mt-8 space-x-6">
+          @for (item of post.attributes.tags; track $index) {
+            <blog-tag [tag]="item" />
+          }
+        </div>
       }
       @if (socialMediaAvailable) {
         <blog-share-post
@@ -54,11 +58,6 @@
           class="pb-4"
         />
       }
-    </section>
-    <section
-      class="mx-auto px-6 sm:px-6 max-w-3xl my-14 flex justify-between flex-col sm:flex-row"
-    >
-      <blog-button [author]="getAuthor" label="Back" icon="Back" />
     </section>
   </section>
 </div>

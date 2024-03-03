@@ -1,9 +1,9 @@
 import { NgTemplateOutlet } from '@angular/common';
 import {
+  AfterViewInit,
   CUSTOM_ELEMENTS_SCHEMA,
   Component,
   Input,
-  inject,
 } from '@angular/core';
 import { Author, SocialMedia } from '../../models';
 
@@ -14,8 +14,17 @@ import { Author, SocialMedia } from '../../models';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [NgTemplateOutlet],
 })
-export class ButtonComponent {
+export class ButtonComponent implements AfterViewInit {
   @Input({ required: true }) label!: string;
   @Input({ required: true }) icon!: keyof SocialMedia;
   @Input({ required: true }) author!: Author;
+
+  ngAfterViewInit(): void {
+    document.getElementById(this.icon)?.addEventListener('click', this.#share);
+  }
+
+  #share = (): void => {
+    const navUrl = this.author.socialMedia[this.icon] + window.location.href;
+    window.open(navUrl, '_blank');
+  };
 }

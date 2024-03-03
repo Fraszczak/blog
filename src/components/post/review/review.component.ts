@@ -7,7 +7,7 @@ import {
   inject,
 } from '@angular/core';
 import PostAttributes from 'src/models/post-attributes';
-import { SharePostComponent } from '../share-post/share-post.component';
+import { SharePostComponent } from './share-post/share-post.component';
 import { ConfigService } from '../../../services/config';
 import { ButtonComponent } from '../../button';
 import { TagComponent } from '../../tag';
