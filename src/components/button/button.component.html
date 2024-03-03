@@ -1,9 +1,6 @@
 @if (author.socialMedia) {
   <button>
-    <a
-      [href]="author.socialMedia[icon]"
-      class="text-gray-400 hover:text-gray-500"
-    >
+    <a [id]="icon" class="text-gray-400 hover:text-gray-500">
       @if (label) {
         <span class="sr-only">{{ label }}</span>
       }
@@ -128,7 +125,7 @@
     viewBox="0 0 36 36"
     aria-hidden="true"
     fill="currentColor"
-    class="iconify iconify--twemoji w-12 h-12 text-black dark:text-white"
+    class="iconify iconify--twemoji w-12 h-12"
   >
     <path
       fill="#31373D"

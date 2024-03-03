@@ -4,9 +4,9 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   Input,
 } from '@angular/core';
-import { ButtonComponent } from '../../button';
-import { TagComponent } from '../../tag';
-import { Author, SocialMedia } from '../../../models';
+import { ButtonComponent } from '../../../button';
+import { TagComponent } from '../../../tag';
+import { Author, SocialMedia } from '../../../../models';
 import { CommonModule } from '@angular/common';
 
 @Component({
